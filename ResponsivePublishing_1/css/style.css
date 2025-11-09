@@ -1,0 +1,210 @@
+@charset "UTF-8";
+
+/*  font-family: "Play", sans-serif */
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+
+/* layout styles */
+#header {
+  height: 327px;
+  background: url(../img/sunmigh.png) repeat-x center top;
+}
+
+/* container styles */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  /* background: rgba(0, 0, 0, 0.2); */
+}
+
+/* quick */
+.quick {
+  text-align: right;
+}
+.quick a {
+  color: #fff;
+  padding: 4px 0 4px 10px;
+  display: inline-block;
+}
+.quick a:hover {
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+/* title */
+.title {
+  font-family: "Play", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.title p {
+  font-size: 27px;
+  color: #fff;
+  background-color: #51b0dc;
+  display: inline-block; /* inline-block -> 패딩값 적용 시키려고 */
+  padding: 14px 20px 10px 20px;
+  font-weight: 900;
+}
+.title h1 a {
+  color: #fff;
+  background-color: #4a9abf;
+  padding: 14px 20px 10px 20px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: -7px;
+  transition: box-shadow 0.3s ease;
+}
+.title h1 a:hover {
+  box-shadow: 0 0 0 3px rgba(75, 154, 191, 0.9) inset,
+    0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
+.icon {
+  text-align: center;
+  margin-top: 40px;
+}
+.icon ul {
+}
+.icon li {
+  display: inline;
+  margin: 0 2px;
+}
+.icon li a {
+  position: relative;
+  display: inline-block;
+  width: 66px;
+  height: 66px;
+  line-height: 66px;
+  background-color: #3192bf;
+  color: #fff;
+  font-size: 35px;
+  border-radius: 50%;
+}
+.icon li a span {
+  opacity: 0; /* 평소에는 안보임 */
+  position: absolute;
+  left: 50%;
+  top: -45px;
+  font-size: 12px;
+  line-height: 1.5; /* 추가 */
+  padding: 2px 5px; /* 추가: 텍스트 주변 여백을 위해 */
+  transform: translateX(-50%); /*너비의 반만큼 왼쪽으로 이동*/
+  background-color: #3192bf;
+  border-radius: 8px 0;
+}
+.icon li a:hover span {
+  opacity: 1;
+  top: -30px;
+  transition: all 0.4s ease-in-out;
+}
+.icon li a span:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  border-top: 5px solid #3192bf;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  transform: translateX(-50%); /*margin-left:-5px로도 가능*/
+}
+.icon li a:hover:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 60px;
+  height: 60px;
+  line-height: 66px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 35px;
+  border-radius: 50%;
+}
+.icon span {
+  /* display: none; */
+}
+
+/* nav */
+.nav {
+  padding: 30px 0;
+}
+.nav h2 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #3192bf;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+.nav li {
+  position: relative;
+  float: left;
+  width: 20%;
+  padding-left: 8px;
+  box-sizing: border-box;
+}
+.nav li:before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #3192bf;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.nav li a {
+  padding: 3px;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 23px;
+  transition: all 0.1s ease;
+}
+.nav li a:hover {
+  background-color: #3192bf;
+  color: #fff;
+}
+
+/* media queries 320 / 480 / 768 / 960 / 1024 / 1280 */
+@media (max-width: 1280px) {
+  /* 1280px 이하면 .container의 너비 화면의 100% */
+  .container {
+    width: 100%;
+  }
+  .row {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* nav 4개 */
+  .nav li {
+    width: 25%;
+  }
+}
+
+@media (max-width: 960px) {
+  /* nav 3개 */
+  .nav li {
+    width: 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* nav 2개 */
+  .nav li {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 320px) {
+}
