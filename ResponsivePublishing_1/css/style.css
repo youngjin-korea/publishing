@@ -8,9 +8,13 @@
   height: 327px;
   background: url(../img/sunmigh.png) repeat-x center top;
 }
+#tit {
+  background-color: #f4f4f4;
+}
 
 /* container styles */
 .container {
+  position: relative;
   width: 1200px;
   margin: 0 auto;
   /* background: rgba(0, 0, 0, 0.2); */
@@ -129,6 +133,12 @@
 .nav {
   padding: 30px 0;
 }
+/* float된 자식을 제대로 감싸기 위함 */
+.nav::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .nav h2 {
   font-size: 18px;
   font-weight: bold;
@@ -165,6 +175,63 @@
   color: #fff;
 }
 
+/* tit 작업 */
+.tit {
+  /* text-align: center; */
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #dbdbdb;
+}
+.tit h2 {
+  font-family: "Play", sans-serif;
+  font-size: 39px;
+  color: #0093bd;
+}
+.tit .tit_btn {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  width: 66px;
+  height: 66px;
+  background-color: #3192bf;
+  color: #fff;
+  font-size: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* contents */
+#contents {
+}
+#contents .container {
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+}
+#cont_left {
+  float: left;
+  width: 250px;
+}
+#cont_center {
+  margin-right: 250px;
+  overflow: hidden;
+  border-right: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  min-height: 600px;
+}
+#cont_right {
+  width: 250px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* footer */
+#footer {
+  width: 100%;
+  border-top: 1px solid #dbdbdb;
+}
+
 /* media queries 320 / 480 / 768 / 960 / 1024 / 1280 */
 @media (max-width: 1280px) {
   /* 1280px 이하면 .container의 너비 화면의 100% */
@@ -188,6 +255,15 @@
   .nav li {
     width: 33%;
   }
+
+  #cont_center {
+    margin-right: 0;
+  }
+  #cont_right {
+    position: static;
+    width: 100%;
+    border-top: 1px solid #dbdbdb;
+  }
 }
 
 @media (max-width: 768px) {
@@ -199,6 +275,10 @@
 
 @media (max-width: 600px) {
   .nav {
+    display: none;
+  }
+
+  .tit .tit_btn {
     display: none;
   }
 }
